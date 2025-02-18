@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nsfi31j4r-nodejs-gitops
+  description: This is GitOps manifest for nsfi31j4r-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=nsfi31j4r-nodejs
+    backstage.io/kubernetes-id: nsfi31j4r-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: nsfi31j4r-nodejs   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nsfi31j4r-nodejs
